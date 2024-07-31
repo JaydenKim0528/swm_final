@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DirEngine - Free Bootstrap 4 Template by Colorlib</title>
+  <div th:include="fragments/css.html :: css"></div>
+  <style>
+    p {
+      color: white; !important;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .center-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .check-in {
+      width: 50%;
+      height: 50px;
+      text-align: center;
+      float: left;
+    }
+
+    .check-out {
+      width: 50%;
+      height: 50px;
+      text-align: center;
+      float: right;
+    }
+    .container1 {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    h2, h3 {
+      margin-bottom: 10px;
+    }
+    .form-group {
+      margin-bottom: 55px;
+
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"], input[type="time"], select {
+      width: calc(100% - 20px);
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+    }
+    .checkbox-group input[type="checkbox"] {
+      margin-right: 10px;
+    }
+    .button-group {
+      display: flex;
+      align-items: center;
+    }
+    .button-group input[type="text"] {
+      flex-grow: 1;
+      margin-right: 10px;
+    }
+    button {
+      padding: 8px 15px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .total-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .total-section div {
+      width: calc(50% - 10px);
+    }
+    .total-section input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body style="background-color: #0c5460">
+
+<nav th:include="fragments/navbar.html :: navbar"></nav>
+<!-- END nav -->
+
+<div class="hero-wrap js-fullheight" style="background-image: url('../static/images/bg_4.jpg');">
+  <div class=""></div>
+  <div class="">
+    <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+      <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+        <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>Blog</span></p>
+        <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">예약</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="container1">
+    <h2>숙소 이름</h2>
+    <h3>객실 이름</h3>
+
+
+    <div class="form-group check-in">
+      <label style="color: wheat">입실일
+        <input type="text" placeholder="오후 1 : 00" readonly/>
+      </label>
+    </div>
+
+    <div class="form-group check-out">
+      <label style="color: wheat">퇴실일
+        <input type="text" placeholder="오전 11 : 00" readonly/>
+      </label>
+    </div>
+
+    <div class="form-group" style="align-items: center; float: right; width: 100%">
+      <label class="center-group" style="color: wheat; ">예약자 정보
+        <input type="text" placeholder="이름">
+        <input type="text" placeholder="전화번호">
+      </label>
+      <div class="checkbox-group">
+        <input type="checkbox" id="sameAsBooker">
+        <p style="color: wheat">예약자와 동일</p>
+
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <label style="color: white">쿠폰
+      <div class="button-group">
+        <select class="center-group">
+          <option value="" selected>선택안함</option>
+          <option value="terms1">이용약관 1</option>
+          <option value="terms2">이용약관 2</option>
+        </select>
+
+        <button>적용</button>
+      </div>
+      </label>
+    </div>
+
+
+    <div style="border: 1px solid white; border-radius: 10px; ">
+      <label style="margin-bottom: 40px "> <h3 style="color: white; font-size: large">이용약관</h3><br>
+      <input type="checkbox" id="1"> <p style="display: inline">샬라샬라</p><br>
+      <input type="checkbox" id="2"> <p style="display: inline">샬라샬라</p><br>
+      <input type="checkbox" id="3"> <p style="display: inline">샬라샬라</p><br>
+      <input type="checkbox" id="4"> <p style="display: inline">샬라샬라</p>
+      </label>
+    </div>
+
+    <div class="total-section">
+      <div>
+        <label style="color: white">기본 금액: <br>
+          <input type="text" readonly>
+        </label>
+      </div>
+
+      <div>
+        <label style="color: white">총 금액:<br>
+          <input type="text" readonly>
+        </label>
+      </div>
+    </div>
+
+    <button style="width: 100%">결제</button>
+  </div>
+</div>
+
+
+
+<div th:include="fragments/footer.html :: footer"></div>
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+
+</body>
+<div th:include="fragments/js.html :: js"></div>
+</html>

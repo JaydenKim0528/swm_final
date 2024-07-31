@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>DirEngine - Free Bootstrap 4 Template by Colorlib</title>
+    <div th:include="fragments/css.html :: css"></div>
+    <link rel="stylesheet" th:href="@{css/mypage.css}">
+</head>
+<body>
+
+<nav th:include="fragments/navbar.html :: navbar"></nav>
+<!-- END nav -->
+
+<div class="hero-wrap js-fullheight" style="background-image: url('images/bg_2.jpg')" >
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+            <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+                <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
+                    <span class="mr-2"><a href="/">Home</a></span>
+                    <span>Mypage</span>
+                </p>
+                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
+                    Mypage
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="mypage-section">
+    <!-- 마이페이지 컨테이너 -->
+    <div class="mypage-container">
+        <!-- 사이드 메뉴 -->
+        <div class="sidebar">
+            <ul>
+                <!-- 예약 내역 메뉴 -->
+                <li onclick="showSection('reservation')">
+                    <a href="javascript:void(0);"> <!-- 페이지 새로고침 방지 -->
+                        예약 내역
+                        <span class="arrow">></span> <!-- 오른쪽 화살표 추가 -->
+                    </a>
+                </li>
+                <!-- 쿠폰 메뉴 -->
+                <li onclick="showSection('coupons')">
+                    <a href="javascript:void(0);">
+                        쿠폰
+                        <span class="arrow">></span>
+                    </a>
+                </li>
+                <!-- 내 정보 수정 메뉴 -->
+                <li onclick="showSection('profile-edit')">
+                    <a href="javascript:void(0);">
+                        내 정보 수정
+                        <span class="arrow">></span>
+                    </a>
+                </li>
+                <!-- 로그인관리 메뉴 -->
+                <li onclick="showSection('activity-log')">
+                    <a href="javascript:void(0);">
+                        로그인 관리
+                        <span class="arrow">></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- 메인 콘텐츠 -->
+        <div class="content">
+            <!-- 예약 내역 섹션 -->
+            <div id="reservation" class="section">
+                <h2>예약 내역</h2>
+                <div class="reservation-list">
+                    <!-- 예약된 항목 리스트 -->
+                    <div class="reservation-item">
+                        <img src="path/to/hotel_image1.jpg" alt="Hotel 1">
+                        <div class="details">
+                            <p>호텔 이름: 아산 카네기</p>
+                            <p>예약 상태: 이용완료</p>
+                            <button>다시 예약</button>
+                            <button>예약 상세</button>
+                        </div>
+                    </div>
+                    <div class="reservation-item">
+                        <img src="path/to/hotel_image2.jpg" alt="Hotel 2">
+                        <div class="details">
+                            <p>호텔 이름: 장유 W</p>
+                            <p>예약 상태: 이용완료</p>
+                            <button>다시 예약</button>
+                            <button>예약 상세</button>
+                        </div>
+                    </div>
+                    <!-- 예약 내역이 없는 경우 -->
+                    <div class="no-reservation">
+                        <p>예정된 여행이 없습니다. 지금 새로운 예약을 진행해보세요.</p>
+                        <button>여행지 찾아보기</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 쿠폰 섹션 -->
+            <div id="coupons" class="section" style="display: none;">
+                <h2>쿠폰</h2>
+                <div class="coupon-list">
+                    <!-- 쿠폰이 있을 경우 -->
+                    <div class="coupon-item">
+                        <p>쿠폰 이름: 여름 할인 쿠폰</p>
+                        <p>유효기간: 2024-08-31</p>
+                        <button>쿠폰 사용하기</button>
+                    </div>
+                    <div class="coupon-item">
+                        <p>쿠폰 이름: 겨울 할인 쿠폰</p>
+                        <p>유효기간: 2024-12-31</p>
+                        <button>쿠폰 사용하기</button>
+                    </div>
+                    <!-- 쿠폰이 없는 경우 -->
+                    <div class="no-coupons">
+                        <p>현재 사용할 수 있는 쿠폰이 없습니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 내 정보 수정 섹션 -->
+            <div id="profile-edit" class="section" style="display: none;">
+                <h2>내 정보 수정</h2>
+                <form id="profileForm" method="post" action="/updateProfile">
+                    <label for="email">이메일 (USER_EMAIL):</label>
+                    <input type="email" id="email" name="email" value="example@example.com" required>
+
+                    <!-- 기본 비밀번호 필드 -->
+                    <label for="password">비밀번호 (USER_PWD)</label>
+                    <div style="display: flex; align-items: center;">
+                        <input type="password" id="password" name="password" value="********" readonly style="flex: 1;">
+                        <button type="button" id="changePasswordButton" style="margin-left: 10px;">변경</button>
+                    </div>
+
+                    <!-- 숨겨진 비밀번호 변경 필드 -->
+                    <div id="passwordChangeFields" style="display: none; margin-top: 20px;">
+                        <input type="password" id="currentPassword" name="currentPassword" placeholder="현재 비밀번호">
+
+                        <input type="password" id="newPassword" name="newPassword" placeholder="새로운 비밀번호">
+
+                        <input type="password" id="confirmNewPassword" name="confirmNewPassword" placeholder="새로운 비밀번호 확인">
+
+                        <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+                            <button type="button" id="cancelPasswordChange" style="margin-right: 10px;">취소</button>
+                            <button type="submit">저장</button>
+                        </div>
+                    </div>
+
+                    <label for="name">이름 (USER_NAME)</label>
+                    <input type="text" id="name" name="name" value="홍길동" required>
+
+                    <!-- 휴대폰 번호 필드 -->
+                    <label for="phone">휴대폰 번호 (USER_PHONE)</label>
+                    <div style="display: flex; align-items: center;">
+                        <input type="text" id="phone" name="phone" value="010-1234-5678" readonly style="flex: 1;">
+                        <button type="button" id="changePhoneButton" style="margin-left: 10px;">수정</button>
+                    </div>
+
+                    <!-- 숨겨진 인증번호 입력 필드 -->
+                    <div id="phoneChangeFields" style="display: none; margin-top: 20px;">
+                        <div style="display: flex; align-items: center;">
+                            <input type="text" id="newPhone" name="newPhone" placeholder="새로운 휴대폰 번호" style="flex: 1;">
+                            <button type="button" id="sendVerificationCode" style="margin-left: 10px;">인증번호 전송</button>
+                        </div>
+
+                        <input type="text" id="verificationCode" name="verificationCode" placeholder="인증번호 입력" style="margin-top: 10px;">
+
+                        <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+                            <button type="button" id="cancelPhoneChange" style="margin-right: 10px;">취소</button>
+                            <button type="submit">저장</button>
+                        </div>
+                    </div>
+
+
+                    <button type="submit">수정 완료</button>
+                </form>
+            </div>
+            <!-- 이력 관리 섹션 -->
+            <div id="activity-log" class="section" style="display: none;">
+                <h2>로그인 관리</h2>
+                <p>이곳에서 로그인 로그 및 기타 활동 기록을 확인할 수 있습니다.</p>
+
+                <!-- 로그인 로그 표시 -->
+                <div class="log-list">
+                    <!-- 로그인 로그 항목 리스트 -->
+                    <div class="log-item">
+                        <p><strong>로그인 시간:</strong> 2024-07-30 10:00</p>
+                        <p><strong>IP 주소:</strong> 123.456.789.0</p>
+                        <p><strong>기기:</strong> Chrome on Windows</p>
+                    </div>
+                    <div class="log-item">
+                        <p><strong>로그인 시간:</strong> 2024-07-29 15:30</p>
+                        <p><strong>IP 주소:</strong> 234.567.890.1</p>
+                        <p><strong>기기:</strong> Firefox on macOS</p>
+                    </div>
+                    <!-- 로그인 로그가 없는 경우 -->
+                    <div class="no-logs">
+                        <p>로그인 로그가 없습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+<div th:include="fragments/footer.html :: footer"></div>
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+
+</body>
+<div th:include="fragments/js.html :: js"></div>
+</html>

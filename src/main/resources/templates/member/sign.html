@@ -10,7 +10,8 @@
 <nav th:include="fragments/navbar.html :: navbar"></nav>
 <!-- END nav -->
 
-<div class="hero-wrap js-fullheight" style="background-image: url('images/bg_2.jpg')" >
+<!--style="background-image: url('images/bg_2.jpg')"-->
+<div class="hero-wrap js-fullheight" style="background-image: url('images/image_8.jpg')">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
@@ -27,7 +28,7 @@
     </div>
 </div>
 
-<section class="ftco-section signInUp-section ftco-degree-bg">
+<section class="ftco-section signInUp-section">
     <div class="login-wrap">
         <div class="login-html">
             <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
@@ -49,24 +50,24 @@
                         <label for="check"><span class="icon"></span>로그인 상태 유지</label>
                     </div>
                     <div class="group">
-                        <input type="submit" class="button" value="Sign In">
+                        <input type="submit" class="button" value="로그인">
                     </div>
 
                     <!-- 소셜 로그인 섹션 시작 -->
                     <div class="social-login">
                         <a href="#" class="social-login-btn">
-                            <img src="../../static/images/kakao_login_small.png" alt="카카오 로그인">
+                            <img src="path/to/kakao_login_small.png" alt="카카오 로그인">
                         </a>
                         <a href="#" class="social-login-btn">
-                            <img src="../../static/images/google_login.png" alt="구글 로그인">
+                            <img src="path/to/google_login.png" alt="구글 로그인">
                         </a>
                         <a href="#" class="social-login-btn">
-                            <img src="../../static/images/naver_login.png" alt="네이버 로그인">
+                            <img src="path/to/naver_login.png" alt="네이버 로그인">
                         </a>
                     </div>
                     <!-- 소셜 로그인 섹션 끝 -->
 
-                    <div class="hr" style="margin: 70px 0 70px 0"></div>
+                    <div class="hr"></div>
 
                     <div class="foot-lnk">
                         <a href="#">비밀번호 찾기</a>
@@ -95,16 +96,16 @@
                     <div class="group">
                         <label for="phone" class="label">휴대전화번호</label>
                         <div class="phone-group">
-                            <input id="phone" type="text" class="input phone-input" style="width: 250px;">
+                            <input id="phone" type="text" class="input phone-input">
                             <button type="button" class="button-small">인증요청</button>
                         </div>
                     </div>
                     <div class="group">
-                        <label for="Authentication" class="label" ></label>
+                        <label for="Authentication" class="label"></label>
                         <input id="Authentication" type="text" class="input" placeholder="인증번호를 입력하세요">
                     </div>
                     <div class="group">
-                        <input type="submit" class="button" value="Sign Up">
+                        <input type="submit" class="button" value="회원가입">
                     </div>
                     <div class="hr"></div>
                     <div class="foot-lnk">
@@ -117,6 +118,7 @@
         </div>
     </div>
 </section>
+
 
 <div th:include="fragments/footer.html :: footer"></div>
 <!-- loader -->

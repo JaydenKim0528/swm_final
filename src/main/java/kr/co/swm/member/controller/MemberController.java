@@ -18,5 +18,10 @@ public class MemberController {
         return "/member/sign";
     }
 
+    @GetMapping("/mypage.do")
+    public String mypage() {
+        return "/member/mypage";
+    }
+
 
 }

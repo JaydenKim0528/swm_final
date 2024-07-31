@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>DirEngine - Free Bootstrap 4 Template by Colorlib</title>
+    <div th:include="fragments/css.html :: css"></div>
+    <link rel="stylesheet" th:href="@{css/sign.css}">
+</head>
+<body>
+
+<nav th:include="fragments/navbar.html :: navbar"></nav>
+<!-- END nav -->
+
+<div class="hero-wrap js-fullheight" style="background-image: url('images/bg_2.jpg')" >
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+            <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+                <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
+                    <span class="mr-2"><a href="/">Home</a></span>
+                    <span>Sign In & Sign Up</span>
+                </p>
+                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
+                    Sign In & Sign Up
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="ftco-section signInUp-section ftco-degree-bg">
+    <div class="login-wrap">
+        <div class="login-html">
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
+            <label for="tab-1" class="tab">로그인</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up">
+            <label for="tab-2" class="tab">회원가입</label>
+            <div class="login-form">
+                <div class="sign-in-htm">
+                    <div class="group">
+                        <label for="signInUser" class="label">이름</label>
+                        <input id="signInUser" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <label for="signInPwd" class="label">비밀번호</label>
+                        <input id="signInPwd" type="password" class="input">
+                    </div>
+                    <div class="group">
+                        <input id="check" type="checkbox" class="check" checked>
+                        <label for="check"><span class="icon"></span>로그인 상태 유지</label>
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" value="Sign In">
+                    </div>
+
+                    <!-- 소셜 로그인 섹션 시작 -->
+                    <div class="social-login">
+                        <a href="#" class="social-login-btn">
+                            <img src="../../static/images/kakao_login_small.png" alt="카카오 로그인">
+                        </a>
+                        <a href="#" class="social-login-btn">
+                            <img src="../../static/images/google_login.png" alt="구글 로그인">
+                        </a>
+                        <a href="#" class="social-login-btn">
+                            <img src="../../static/images/naver_login.png" alt="네이버 로그인">
+                        </a>
+                    </div>
+                    <!-- 소셜 로그인 섹션 끝 -->
+
+                    <div class="hr" style="margin: 70px 0 70px 0"></div>
+
+                    <div class="foot-lnk">
+                        <a href="#">비밀번호 찾기</a>
+                    </div>
+                    <div class="foot-lnk">
+                        <a href="#">아이디 찾기</a>
+                    </div>
+                </div>
+                <div class="sign-up-htm">
+                    <div class="group">
+                        <label for="signUpUser" class="label">이름</label>
+                        <input id="signUpUser" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <label for="signUpPwd" class="label">비밀번호</label>
+                        <input id="signUpPwd" type="password" class="input">
+                    </div>
+                    <div class="group">
+                        <label for="confirmPassword" class="label">비밀번호 확인</label>
+                        <input id="confirmPassword" type="password" class="input">
+                    </div>
+                    <div class="group">
+                        <label for="email" class="label">이메일</label>
+                        <input id="email" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <label for="phone" class="label">휴대전화번호</label>
+                        <div class="phone-group">
+                            <input id="phone" type="text" class="input phone-input" style="width: 250px;">
+                            <button type="button" class="button-small">인증요청</button>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <label for="Authentication" class="label" ></label>
+                        <input id="Authentication" type="text" class="input" placeholder="인증번호를 입력하세요">
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" value="Sign Up">
+                    </div>
+                    <div class="hr"></div>
+                    <div class="foot-lnk">
+                        <label for="tab-1">
+                            <a>이미 회원인가요?</a>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div th:include="fragments/footer.html :: footer"></div>
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+
+</body>
+<div th:include="fragments/js.html :: js"></div>
+</html>

@@ -9,8 +9,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class TestDto {
 
+public class TestDto {
 
     private int t_no;
     private String t_name;

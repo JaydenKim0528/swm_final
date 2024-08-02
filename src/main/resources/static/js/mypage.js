@@ -62,3 +62,42 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// 탈퇴시 기타 사유 텍스트 박스 유효성 검사
+document.addEventListener('DOMContentLoaded', function() {
+    // 'otherReason' 텍스트 영역, 'charCount' 카운터 문구, 'errorMessage' 에러 메시지 요소 가져오기
+    var otherReason = document.getElementById('otherReason');
+    var charCount = document.getElementById('charCount');
+    var errorMessage = document.getElementById('errorMessage');
+
+    otherReason.addEventListener('input', function () {
+        // 입력된 텍스트의 길이 계산
+        var textLength = this.value.length;
+        // 현재 문자 수와 최대 문자 수를 표시
+        charCount.textContent = textLength + " / 250";
+
+        // 문자 수가 250자를 초과하면 에러 메시지를 표시하고 추가 입력 방지
+        if (textLength > 250) {
+            errorMessage.style.display = 'block';
+            // 초과된 문자 삭제
+            this.value = this.value.substring(0, 250);
+            // 문자 수를 다시 계산하고 표시
+            charCount.textContent = "250 / 250";
+        } else {
+            // 문자 수가 250자 이내면 에러 메시지를 숨김
+            errorMessage.style.display = 'none';
+        }
+    });
+
+    // 폼 제출 이벤트 리스너 추가
+    document.getElementById('withdrawalForm').addEventListener('submit', function(event) {
+        // 'otherReason' 텍스트 영역의 값 가져오기
+        var otherReasonText = otherReason.value;
+        // 텍스트의 길이가 250자를 초과하면 폼 제출 방지 및 경고 메시지 표시
+        if (otherReasonText.length > 250) {
+            event.preventDefault(); // 폼 제출 방지
+            alert("기타 사유는 250자 이내로 입력해 주세요.");
+        }
+    });
+});
+
+

@@ -62,35 +62,98 @@
     margin-bottom: 30px;
 }
 
-.reservation-list,
-.coupon-list {
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
+/* 버튼 기본 스타일 */
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 5px;
+    text-align: center;
 }
 
-.reservation-item,
-.coupon-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* 예약 취소 버튼 스타일 */
+.btn-danger {
+    background-color: #dc3545; /* 배경색 */
+    color: #fff; /* 글자색 */
+    border: none; /* 테두리 제거 */
+    border-radius: 4px; /* 둥근 모서리 */
+    padding: 8px 15px; /* 내부 여백 */
+    font-size: 14px; /* 글자 크기 */
+    cursor: pointer; /* 커서 변경 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+    transition: background-color 0.3s, box-shadow 0.3s; /* 부드러운 전환 효과 */
+}
+
+/* 예약 취소 버튼 호버 스타일링 */
+button#cancelReservation:hover {
+    background-color: #c82333; /* 호버 시 배경색 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 호버 시 그림자 효과 */
+}
+
+
+.btn-cancel:hover {
+    background-color: #c82333;
+}
+
+/* 예약 내역 리스트 컨테이너 스타일링 */
+.reservation-list {
+    border: 1px solid #ddd; /* 테두리 설정 */
+    border-radius: 8px; /* 모서리 둥글게 처리 */
+    padding: 15px; /* 내부 여백 설정 */
+    background-color: #ffffff; /* 배경색 흰색 */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+}
+
+/* 예약 항목 스타일링 */
+.reservation-item {
+    border: 1px solid #e0e0e0; /* 항목 테두리 설정 */
+    border-radius: 8px; /* 항목 모서리 둥글게 처리 */
+    padding: 15px; /* 항목 내부 여백 설정 */
+    background-color: #ffffff; /* 항목 배경색 흰색 */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* 항목 그림자 효과 */
+    display: flex; /* 플렉스 박스 사용 */
+    align-items: center; /* 중앙 정렬 */
+    margin-bottom: 20px; /* 항목 간 하단 간격 설정 */
 }
 
 .reservation-item img {
-    width: 100px;
-    height: 100px;
-    margin-right: 15px;
+    width: 100px; /* 이미지 너비 설정 */
+    height: 100px; /* 이미지 높이 설정 */
+    margin-right: 15px; /* 이미지와 텍스트 간의 간격 설정 */
 }
 
 .details {
-    flex: 1;
+    flex: 1; /* 상세 정보가 남은 공간을 차지하도록 설정 */
 }
 
-.no-reservation,
-.no-coupons {
-    text-align: center;
-    color: #777;
-    padding: 40px 0;
+.details p {
+    margin: 5px 0; /* 텍스트 상하 간격 설정 */
 }
+
+/* 예약 내역이 없는 경우 스타일링 */
+.no-reservation {
+    text-align: center; /* 텍스트 중앙 정렬 */
+    color: #777; /* 텍스트 색상 설정 */
+    padding: 40px 0; /* 상하 여백 설정 */
+    font-size: 16px; /* 글자 크기 설정 */
+    border-top: 1px solid #ddd; /* 상단 테두리 설정 */
+    margin-top: 20px; /* 상단 여백 설정 */
+}
+
+/* 예약 취소 버튼 위치 설정 */
+.reservation-cancel {
+    margin-top: 20px; /* 상단 여백 설정 */
+    text-align: right; /* 우측 정렬 */
+}
+
 
 /* 내 정보 수정 폼 스타일링 */
 form {
@@ -113,8 +176,8 @@ form input {
 
 form button {
     margin-top: 5px;
-    height:40px;
-    weight:48px
+    height:50px;
+    weight:50px
     padding: 10px;
     background-color: #007bff;
     color: #fff;
@@ -179,3 +242,185 @@ button#sendVerificationCode:hover {
     background-color: #218838;
 }
 
+/* 로그인 관리 테이블 스타일링 */
+.log-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.log-table th, .log-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.log-table th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: bold;
+}
+
+.log-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* 로그인 관리 섹션 스타일링 추가 */
+#activity-log {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#activity-log h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+#activity-log p {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* 회원 탈퇴 섹션 스타일링 */
+#withdrawal {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#withdrawal h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+#withdrawal p {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+#withdrawal h3 {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 16px;
+}
+
+.radio-group label input[type="radio"] {
+    margin-right: 10px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    color: #333;
+    font-size: 16px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+#otherReason {
+    height: 80px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: none;
+    box-sizing: border-box;
+}
+
+#withdrawalForm button {
+    width: 100%;
+    padding: 12px;
+    background-color: #c4c4c4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#withdrawalForm button:hover {
+    background-color: #a4a4a4;
+}
+
+
+
+/* 쿠폰 섹션 스타일링 */
+.coupon-list {
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+/* 쿠폰 아이템 스타일링 */
+.coupon-item {
+    border: 1px solid #e0e0e0; /* 연한 테두리 색상 */
+    border-radius: 8px; /* 모서리 둥글게 */
+    padding: 15px; /* 내부 여백 */
+    background-color: #ffffff; /* 카드 배경색 */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* 연한 그림자 */
+    display: flex; /* 플렉스 박스 사용 */
+    flex-direction: column; /* 세로 방향으로 배치 */
+    align-items: flex-start; /* 시작점 정렬 */
+    margin-bottom: 20px; /* 아이템 간격 */
+}
+
+/* 쿠폰 이름과 유효기간 스타일링 */
+.coupon-item p {
+    margin: 0 0 10px; /* 텍스트 간격 조정 */
+    color: #555; /* 텍스트 색상 */
+    font-size: 14px; /* 글자 크기 */
+}
+
+/* 쿠폰 사용 버튼 스타일링 */
+.coupon-item button {
+    align-self: center; /* 버튼 중앙 정렬 */
+    background-color: #007bff; /* 배경색 */
+    color: #fff; /* 글자색 */
+    border: none; /* 테두리 제거 */
+    border-radius: 4px; /* 모서리 둥글게 */
+    padding: 10px 15px; /* 내부 여백 */
+    cursor: pointer; /* 커서 변경 */
+    font-size: 14px; /* 글자 크기 */
+}
+
+/* 쿠폰 사용 버튼 호버 스타일링 */
+.coupon-item button:hover {
+    background-color: #0056b3; /* 호버 시 배경색 */
+}
+
+/* 쿠폰 목록의 no-coupons 섹션 스타일링 */
+.no-coupons {
+    text-align: center; /* 중앙 정렬 */
+    color: #777; /* 텍스트 색상 */
+    padding: 40px 0; /* 내부 여백 */
+    font-size: 16px; /* 글자 크기 */
+}

@@ -1,5 +1,23 @@
 // 회원가입 유효성 검사 로직
 
+// 아이디 유효성 검사
+function validateId() {
+    const signUpId = document.getElementById("signUpId").value;
+    const idMsg = document.getElementById("idMsg");
+
+    // 영문 소문자와 숫자만 허용, 6자리 이상 12자리 이하
+    const idPattern = /^(?=.*[a-z])[a-z0-9]{6,12}$/;
+
+    if (idPattern.test(signUpId)) {
+        idMsg.innerHTML = "사용 가능한 아이디입니다.";
+        idMsg.style.color = "#aaa";
+    } else {
+        idMsg.innerHTML = "영어 소문자와 숫자만 허용, 6~12자리로 입력하세요.";
+        idMsg.style.color = "red";
+    }
+}
+
+
 // 이름 유효성 검사
 function validName() {
     const signUpName = document.getElementById("signUpName").value;
@@ -61,7 +79,7 @@ function validatePhone() {
         phoneMsg.innerHTML = "유효한 전화번호입니다.";
         phoneMsg.style.color = "#aaa";
     } else {
-        phoneMsg.innerHTML = "01011112222 형식으로 입력하세요.";
+        phoneMsg.innerHTML = "'-' 없이 입력하세요.";
         phoneMsg.style.color = "red";
     }
 }
